@@ -270,7 +270,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Crawler/Crawler.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2FBY22AJDG;
 				INFOPLIST_FILE = Crawler/Info.plist;
@@ -280,6 +280,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.Crawler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8f5202fe-4f12-43a7-8db5-473aec256698";
+				PROVISIONING_PROFILE_SPECIFIER = "Crawler development";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -289,9 +291,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Crawler/Crawler.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 2FBY22AJDG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Crawler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,6 +301,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.Crawler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

@@ -10,10 +10,16 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var fromField: NSTextField!
+    @IBOutlet weak var toField: NSTextField!
+    @IBOutlet weak var searchButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        fromField.delegate = self
+        toField.delegate = self
+        searchButton.action = #selector(ViewController.search)
     }
 
     override var representedObject: Any? {
@@ -21,7 +27,24 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
-
 }
 
+extension ViewController: NSTextFieldDelegate {
+    override func controlTextDidChange(_ obj: Notification) {
+        let field = obj.object as! NSTextField
+        switch field {
+        case fromField:
+            print("Aa")
+        case toField:
+            print("Bb")
+        default:
+            print("~~")
+        }
+    }
+}
+
+extension ViewController {
+    @objc func search() {
+        print("Search")
+    }
+}
