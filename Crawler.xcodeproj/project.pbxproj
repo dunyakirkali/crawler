@@ -12,6 +12,8 @@
 		0570B5312115C53800DF454E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570B5302115C53800DF454E /* Assets.xcassets */; };
 		0570B5342115C53800DF454E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0570B5322115C53800DF454E /* Main.storyboard */; };
 		05E0FDE62123751400909DF5 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0FDE52123751400909DF5 /* WindowController.swift */; };
+		05E0FDEA21237C7D00909DF5 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E0FDE921237C7D00909DF5 /* Feedback.storyboard */; };
+		05E0FDEC21237D3500909DF5 /* FeedbackWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0FDEB21237D3500909DF5 /* FeedbackWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		0570B5352115C53800DF454E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0570B5362115C53800DF454E /* Crawler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crawler.entitlements; sourceTree = "<group>"; };
 		05E0FDE52123751400909DF5 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		05E0FDE921237C7D00909DF5 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
+		05E0FDEB21237D3500909DF5 /* FeedbackWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				0570B5322115C53800DF454E /* Main.storyboard */,
 				0570B5352115C53800DF454E /* Info.plist */,
 				0570B5362115C53800DF454E /* Crawler.entitlements */,
+				05E0FDE921237C7D00909DF5 /* Feedback.storyboard */,
+				05E0FDEB21237D3500909DF5 /* FeedbackWindowController.swift */,
 			);
 			path = Crawler;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 			files = (
 				0570B5312115C53800DF454E /* Assets.xcassets in Resources */,
 				0570B5342115C53800DF454E /* Main.storyboard in Resources */,
+				05E0FDEA21237C7D00909DF5 /* Feedback.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +150,7 @@
 			files = (
 				0570B52F2115C53600DF454E /* ViewController.swift in Sources */,
 				05E0FDE62123751400909DF5 /* WindowController.swift in Sources */,
+				05E0FDEC21237D3500909DF5 /* FeedbackWindowController.swift in Sources */,
 				0570B52D2115C53600DF454E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,8 @@ extension WindowController: NSToolbarDelegate {
 
 extension WindowController {
     @objc func feedbackSelected(sender: NSToolbarItem) {
-        self.window?.beginSheet(self.window!, completionHandler: nil)
+        let feedbackWindow = FeedbackWindowController(windowNibName: NSNib.Name(rawValue: "Feedback"))
+        self.window?.beginSheet(feedbackWindow.window!, completionHandler: nil)
     }
     
     @objc func printSelected(sender: NSToolbarItem) {
