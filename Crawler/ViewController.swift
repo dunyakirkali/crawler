@@ -88,4 +88,9 @@ extension ViewController {
     @objc func search() {
         print("Search")
     }
+    
+    @IBAction func printRoute(sender: NSButton) {
+        let printOperation = NSPrintOperation(view: mapView)
+        printOperation.run()
+    }
 }

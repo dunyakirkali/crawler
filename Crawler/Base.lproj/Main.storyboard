@@ -685,7 +685,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Crawler" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Crawler" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -694,15 +694,13 @@
                         <toolbar key="toolbar" implicitIdentifier="34FA5C73-5F1E-4B30-809D-7CBCEB003733" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="lk6-wK-3bI">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="hhc-Cd-R65"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="AOZ-3v-0wq"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="9Nj-6e-nbY"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="IKA-RI-bid"/>
-                                <toolbarItem implicitItemIdentifier="200439E1-252B-4DC2-A2F8-71F755947A4E" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" id="4gb-Tt-ymI"/>
+                                <toolbarItem implicitItemIdentifier="200439E1-252B-4DC2-A2F8-71F755947A4E" explicitItemIdentifier="NSToolbarFeedbackItem" label="Feedback" paletteLabel="Feedback" tag="-1" image="FeedbackIcon" id="4gb-Tt-ymI"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="9KF-ds-9uN"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="hhc-Cd-R65"/>
-                                <toolbarItem reference="AOZ-3v-0wq"/>
                                 <toolbarItem reference="9KF-ds-9uN"/>
                                 <toolbarItem reference="4gb-Tt-ymI"/>
                                 <toolbarItem reference="9Nj-6e-nbY"/>
@@ -713,6 +711,10 @@
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="colorToolbarItem" destination="hhc-Cd-R65" id="amb-cM-obJ"/>
+                        <outlet property="feedbackToolbarItem" destination="4gb-Tt-ymI" id="38r-VG-ocW"/>
+                        <outlet property="printToolbarItem" destination="9Nj-6e-nbY" id="WIQ-lp-KpB"/>
+                        <outlet property="toolbar" destination="lk6-wK-3bI" id="Tow-I4-bvg"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -735,7 +737,7 @@
                                 <rect key="frame" x="20" y="454" width="748" height="22"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qbh-DC-UJi">
-                                        <rect key="frame" x="0.0" y="0.0" width="565" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="22"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="jWC-Qd-tv6">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -743,7 +745,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F9O-Rh-pNU">
-                                        <rect key="frame" x="573" y="0.0" width="96" height="22"/>
+                                        <rect key="frame" x="252" y="0.0" width="244" height="22"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="6sZ-gc-dgK">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -751,7 +753,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O6j-AS-bRJ">
-                                        <rect key="frame" x="671" y="-6" width="83" height="32"/>
+                                        <rect key="frame" x="498" y="-6" width="256" height="32"/>
                                         <buttonCell key="cell" type="push" title="Search" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yO6-XX-GH2">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -792,4 +794,7 @@
             <point key="canvasLocation" x="75" y="792"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FeedbackIcon" width="256" height="256"/>
+    </resources>
 </document>
