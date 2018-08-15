@@ -11,9 +11,9 @@
 		0570B52F2115C53600DF454E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570B52E2115C53600DF454E /* ViewController.swift */; };
 		0570B5312115C53800DF454E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0570B5302115C53800DF454E /* Assets.xcassets */; };
 		0570B5342115C53800DF454E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0570B5322115C53800DF454E /* Main.storyboard */; };
+		05CC79B32124C34A0080415E /* Feedback.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05CC79B22124C34A0080415E /* Feedback.xib */; };
 		05E0FDE62123751400909DF5 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0FDE52123751400909DF5 /* WindowController.swift */; };
-		05E0FDEA21237C7D00909DF5 /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E0FDE921237C7D00909DF5 /* Feedback.storyboard */; };
-		05E0FDEC21237D3500909DF5 /* FeedbackWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0FDEB21237D3500909DF5 /* FeedbackWindowController.swift */; };
+		05E0FDEC21237D3500909DF5 /* FeedbackWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0FDEB21237D3500909DF5 /* FeedbackWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +24,9 @@
 		0570B5332115C53800DF454E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0570B5352115C53800DF454E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0570B5362115C53800DF454E /* Crawler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crawler.entitlements; sourceTree = "<group>"; };
+		05CC79B22124C34A0080415E /* Feedback.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Feedback.xib; sourceTree = "<group>"; };
 		05E0FDE52123751400909DF5 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		05E0FDE921237C7D00909DF5 /* Feedback.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
-		05E0FDEB21237D3500909DF5 /* FeedbackWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackWindowController.swift; sourceTree = "<group>"; };
+		05E0FDEB21237D3500909DF5 /* FeedbackWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +61,13 @@
 			children = (
 				0570B52C2115C53600DF454E /* AppDelegate.swift */,
 				05E0FDE52123751400909DF5 /* WindowController.swift */,
+				05E0FDEB21237D3500909DF5 /* FeedbackWindow.swift */,
 				0570B52E2115C53600DF454E /* ViewController.swift */,
 				0570B5302115C53800DF454E /* Assets.xcassets */,
 				0570B5322115C53800DF454E /* Main.storyboard */,
+				05CC79B22124C34A0080415E /* Feedback.xib */,
 				0570B5352115C53800DF454E /* Info.plist */,
 				0570B5362115C53800DF454E /* Crawler.entitlements */,
-				05E0FDE921237C7D00909DF5 /* Feedback.storyboard */,
-				05E0FDEB21237D3500909DF5 /* FeedbackWindowController.swift */,
 			);
 			path = Crawler;
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 			files = (
 				0570B5312115C53800DF454E /* Assets.xcassets in Resources */,
 				0570B5342115C53800DF454E /* Main.storyboard in Resources */,
-				05E0FDEA21237C7D00909DF5 /* Feedback.storyboard in Resources */,
+				05CC79B32124C34A0080415E /* Feedback.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +150,7 @@
 			files = (
 				0570B52F2115C53600DF454E /* ViewController.swift in Sources */,
 				05E0FDE62123751400909DF5 /* WindowController.swift in Sources */,
-				05E0FDEC21237D3500909DF5 /* FeedbackWindowController.swift in Sources */,
+				05E0FDEC21237D3500909DF5 /* FeedbackWindow.swift in Sources */,
 				0570B52D2115C53600DF454E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +287,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Crawler/Crawler.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2FBY22AJDG;
 				INFOPLIST_FILE = Crawler/Info.plist;
@@ -295,10 +296,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13.6;
 				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.Crawler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8f5202fe-4f12-43a7-8db5-473aec256698";
-				PROVISIONING_PROFILE_SPECIFIER = "Crawler development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -308,14 +310,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Crawler/Crawler.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2FBY22AJDG;
 				INFOPLIST_FILE = Crawler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13.6;
 				PRODUCT_BUNDLE_IDENTIFIER = co.ahtung.Crawler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

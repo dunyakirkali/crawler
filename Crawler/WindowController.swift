@@ -11,7 +11,6 @@ import Cocoa
 class WindowController: NSWindowController {
     
     @IBOutlet weak var toolbar: NSToolbar!
-    @IBOutlet weak var feedbackToolbarItem: NSToolbarItem!
     @IBOutlet weak var printToolbarItem: NSToolbarItem!
     @IBOutlet weak var colorToolbarItem: NSToolbarItem!
     
@@ -19,8 +18,6 @@ class WindowController: NSWindowController {
         super.windowDidLoad()
         
         toolbar.delegate = self
-        
-        feedbackToolbarItem.action = #selector(feedbackSelected(sender:))
         
         printToolbarItem.action = #selector(printSelected(sender:))
     }
@@ -30,12 +27,7 @@ extension WindowController: NSToolbarDelegate {
 
 }
 
-extension WindowController {
-    @objc func feedbackSelected(sender: NSToolbarItem) {
-        let feedbackWindow = FeedbackWindowController(windowNibName: NSNib.Name(rawValue: "Feedback"))
-        self.window?.beginSheet(feedbackWindow.window!, completionHandler: nil)
-    }
-    
+extension WindowController {    
     @objc func printSelected(sender: NSToolbarItem) {
         print("TODO")
     }

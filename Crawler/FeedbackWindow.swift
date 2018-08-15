@@ -8,6 +8,6 @@
 
 import Cocoa
 
-class FeedbackWindowController: NSWindowController {
+class FeedbackWindow: NSWindow {
     
 }
